@@ -1,0 +1,20 @@
+# Godot
+.godot/
+*.import
+# C# / .NET
+.mono/
+bin/
+obj/
+
+# IDE
+.vscode/
+.idea/
+.vs/
+
+# Visual Studio / Rider
+*.user
+*.suo
+
+# OS
+Thumbs.db
+.DS_Store
