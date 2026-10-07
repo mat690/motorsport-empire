@@ -106,7 +106,21 @@ Circuit powerCircuit = new Circuit(
 	40.0f  // Grip mécanique
 );
 float circuitPerformance = car.CalculateCircuitPerformance(circuit);
+RaceWeekend round1 = new RaceWeekend(1, circuit);
+RaceWeekend round2 = new RaceWeekend(2, powerCircuit);
 
+championship.AddRaceWeekend(round1);
+championship.AddRaceWeekend(round2);
+
+GD.Print("=== CALENDRIER ===");
+
+foreach (RaceWeekend raceWeekend in championship.Calendar)
+{
+	GD.Print(
+		$"Manche {raceWeekend.RoundNumber} : " +
+		$"{raceWeekend.Circuit.Name} ({raceWeekend.Circuit.Country})"
+	);
+}
 GD.Print(
 	"Performance théorique de l'AR-01 : ",
 	circuitPerformance.ToString("0.00")
