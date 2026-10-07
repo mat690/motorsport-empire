@@ -1,5 +1,4 @@
 using Godot;
-
 public partial class TestDriver : Node
 {
 	public override void _Ready()
@@ -145,6 +144,24 @@ GD.Print(
 	"VX-01 : ",
 	rivalCar.CalculateCircuitPerformance(powerCircuit).ToString("0.00")
 );
+round1.Results.Add(new RaceResult(driver1, 1, 25));
+round1.Results.Add(new RaceResult(driver2, 2, 18));
+
+foreach (RaceResult result in round1.Results)
+{
+	GD.Print(
+		$"{result.Position}. " +
+		$"{result.Driver.GetFullName()}"
+	);
+	foreach (RaceResult raceResult in round1.Results)
+{
+	GD.Print(
+		$"{raceResult.Position}. " +
+		$"{raceResult.Driver.GetFullName()} - " +
+		$"{raceResult.Points} points"
+	);
+}
+}
+}
 
 	}
-}

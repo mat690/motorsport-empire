@@ -18,8 +18,9 @@ public class Championship
 	{
 		Teams.Add(team);
 	}
+
 	public void AddRaceWeekend(RaceWeekend raceWeekend)
-{
-	Calendar.Add(raceWeekend);
-}
+	{
+		Calendar.Add(raceWeekend);
+	}
 }
