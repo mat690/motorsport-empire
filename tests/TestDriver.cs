@@ -47,9 +47,9 @@ team.SetCar(car);
 Circuit circuit = new Circuit(
 	"Circuit des Hautes-Rives",
 	"France",
-	80.0f, // Importance aérodynamique
-	55.0f, // Importance puissance
-	70.0f  // Importance grip mécanique
+	100.0f,
+	25.0f,
+	45.0f
 );
 GD.Print(
 	driver1.GetFullName(),
@@ -74,12 +74,46 @@ GD.Print("");
 GD.Print("=== CIRCUIT ===");
 GD.Print("Circuit : ", circuit.Name);
 GD.Print("Pays : ", circuit.Country);
-
+Car rivalCar = new Car(
+	"VX-01",
+	62.0f, // Aéro moins bonne
+	80.0f, // Moteur plus puissant
+	72.0f, // Meilleur grip mécanique
+	70.0f
+);
+Circuit powerCircuit = new Circuit(
+	"Autodrome de Valdora",
+	"Italie",
+	45.0f, // Aéro
+	95.0f, // Puissance
+	40.0f  // Grip mécanique
+);
 float circuitPerformance = car.CalculateCircuitPerformance(circuit);
 
 GD.Print(
 	"Performance théorique de l'AR-01 : ",
 	circuitPerformance.ToString("0.00")
 );
+GD.Print("");
+GD.Print("=== COMPARAISON ===");
+
+ 
+GD.Print(
+	"VX-01 : ",
+	rivalCar.CalculateCircuitPerformance(circuit).ToString("0.00")
+);
+
+GD.Print("");
+
+GD.Print("Autodrome de Valdora :");
+GD.Print(
+	"AR-01 : ",
+	car.CalculateCircuitPerformance(powerCircuit).ToString("0.00")
+);
+GD.Print(
+	"VX-01 : ",
+	rivalCar.CalculateCircuitPerformance(powerCircuit).ToString("0.00")
+);
+
 	}
 }
