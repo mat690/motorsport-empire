@@ -1,108 +1,181 @@
-# MOTORSPORT EMPIRE — ÉTAT ACTUEL
+# Motorsport Empire — État actuel du développement
 
-## Phase actuelle
+## Environnement
 
-PRÉPRODUCTION — Mise en place du projet
-
-## Version
-
-Pré-V0.1
-
-## Moteur
-
-Langage principal : C#
-
-Godot utilisé : édition .NET
-
-Architecture prévue :
-- C# pour le cœur de la simulation et la logique du jeu
-- Godot pour les scènes, l'interface, la 3D, l'audio et la présentation
-## État du projet
-
-Le projet Godot est créé.
-
-Structure actuelle :
-
-- core/
-- data/
-- scenes/
-- scripts/
-- simulation/
-- tests/
-- ui/
-- docs/
-La migration initiale de GDScript vers C# est terminée.
-
-Première classe fonctionnelle :
-- Driver.cs
-
-Premier test C# fonctionnel :
-- TestDriver.cs
-
-Un pilote fictif peut être créé et ses données peuvent être lues.
-## Documentation
-
-Créé :
-
-- VISION.md
-- DECISIONS.md
-- CURRENT_STATE.md
-- ROADMAP.md
-
-VISION.md contient la vision générale du projet.
+- Moteur : Godot 4.7.2 .NET
+- Langage : C#
+- Target principal actuel : .NET 8
+- Nullable Reference Types activés dans le projet
+- Git et GitHub configurés
+- Dépôt GitHub privé
+- État actuel : 0 erreur / 0 avertissement C#
 
 ## Objectif actuel
 
-Construire la V0.1 du moteur de simulation.
+Développement de la V0.1 : construire le squelette fonctionnel du monde et d'une saison avant d'ajouter les systèmes avancés.
 
-La V0.1 doit permettre de créer un petit univers fictif contenant :
+Le code actuel est volontairement simple. Il constitue la fondation du jeu définitif et sera progressivement enrichi.
 
-- équipes ;
-- pilotes ;
-- voitures ;
-- circuits ;
-- championnat ;
-- calendrier.
+## Modèles actuellement créés
 
-Puis simuler une première saison.
+### Driver
 
-## Pas encore développé
+Contient actuellement :
+- prénom
+- nom
+- âge
+- nationalité
+- statistiques de base
+- potentiel réel caché
+- équipe actuelle nullable
 
-Aucun système de gameplay n'est encore implémenté.
+Le pilote peut exister sans équipe, ce qui sera notamment nécessaire pour les transferts et le mode Vagabond.
 
-Aucune interface définitive.
+### DriverKnowledge
 
-Aucune course 3D.
+Sépare la vraie valeur du pilote de la connaissance qu'en possède le joueur.
 
-Aucune IA avancée.
+Contient actuellement :
+- niveau de connaissance
+- estimation min/max du potentiel
+- biais d'évaluation
 
-Aucun système R&D.
+Le potentiel réel du pilote n'est pas directement exposé au joueur.
 
-Aucun système de contrats.
+### Team
 
-Aucun système de sponsors.
+Contient actuellement :
+- nom
+- nationalité
+- budget
+- premier pilote
+- deuxième pilote
+- voiture
 
-Aucun système d'académie.
+Les pilotes et la voiture peuvent être absents temporairement.
 
-Aucune cinématique.
+### Car
 
-## Prochaine étape
+Contient actuellement :
+- nom
+- aérodynamique
+- puissance
+- grip mécanique
+- fiabilité
 
-Préparer ROADMAP.md puis commencer l'architecture de données de la V0.1.
+Ces statistiques sont provisoires et seront beaucoup plus détaillées dans les versions futures.
 
-## Règle de développement
+La voiture peut calculer une performance théorique selon les caractéristiques d'un circuit.
 
-Ne pas développer plusieurs gros systèmes simultanément.
+### Circuit
 
-Construire, tester et valider chaque fondation avant de passer
-à la suivante.
+Contient actuellement :
+- nom
+- pays réel
+- importance aérodynamique
+- importance puissance
+- importance grip mécanique
 
-La simulation reste indépendante de sa représentation graphique.
+Les circuits eux-mêmes sont fictifs mais sont situés dans des pays réels.
 
-## Dernier point de reprise
+Deux circuits de test existent :
+- Circuit des Hautes-Rives — France
+- Autodrome de Valdora — Italie
 
-Le projet Godot fonctionne et la documentation initiale est en cours
-de création.
+Le système voiture/circuit a été validé :
+- une voiture peut être meilleure sur un circuit
+- une autre voiture peut reprendre l'avantage sur un circuit aux caractéristiques différentes
 
-Prochaine action :
-remplir ROADMAP.md.
+### Championship
+
+Contient actuellement :
+- nom
+- liste des équipes
+- calendrier
+
+Test actuel :
+- World Racing Championship
+- Asterion Racing
+- Velox Motorsport
+
+La gestion de plusieurs équipes via List<Team> fonctionne.
+
+### RaceWeekend
+
+Contient actuellement :
+- numéro de manche
+- circuit
+
+Le championnat possède une List<RaceWeekend> servant de calendrier.
+
+Calendrier de test actuel :
+1. Circuit des Hautes-Rives — France
+2. Autodrome de Valdora — Italie
+
+Le calendrier a été testé avec succès.
+
+## Architecture validée actuellement
+
+Driver
+→ Team
+→ Championship
+
+Car
+→ Circuit
+→ performance théorique dépendante du circuit
+
+Championship
+→ Calendar
+→ RaceWeekend
+→ Circuit
+
+## Tests
+
+Le script principal de test est actuellement :
+
+res://tests/TestDriver.cs
+
+Il sert uniquement à vérifier les modèles pendant la construction de la V0.1.
+
+Les GD.Print() sont temporaires et ne représentent pas l'interface finale du jeu.
+
+## Principes architecturaux importants
+
+- La simulation doit rester indépendante de la présentation 3D autant que possible.
+- Le joueur et l'équipe devront être deux entités distinctes.
+- Les vraies valeurs de simulation peuvent être différentes des informations connues du joueur.
+- Les formats de week-end ne doivent pas être codés définitivement en FP1/FP2/FP3/Q1/Q2/Q3/course.
+- Les réglementations devront pouvoir modifier le format sportif et les règles techniques.
+- Les systèmes électriques, hybrides, batteries, récupération et déploiement énergétique feront partie des futures réglementations et du développement des groupes propulseurs.
+- Les circuits sont fictifs mais utilisent des pays et nationalités réels.
+- Le code actuel est un squelette destiné à évoluer, pas le niveau de profondeur final.
+
+## État Git
+
+Dernier checkpoint prévu/réalisé :
+
+"Add championship calendar and race weekends"
+
+Le projet a été push sur GitHub.
+
+## PROCHAINE ÉTAPE EXACTE
+
+Ne pas commencer directement la simulation complexe d'une course.
+
+Continuer la V0.1 à partir du calendrier.
+
+Prochaine petite étape :
+créer la structure minimale permettant d'enregistrer un résultat simplifié de course.
+
+Ensuite, progressivement :
+1. résultat simplifié d'une manche
+2. attribution de points
+3. classement pilotes
+4. classement constructeurs
+5. plusieurs manches
+6. saison complète
+7. fin de saison
+8. passage à la saison suivante
+9. sauvegarde / chargement
+
+Ne pas implémenter maintenant les systèmes avancés de R&D, stratégie, météo, essais, 3D, New Gen ou réglementations. Ils sont documentés dans VISION.md / ROADMAP.md et viendront dans leurs phases respectives.
