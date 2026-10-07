@@ -6,12 +6,13 @@ public class Championship
 
 	public List<Team> Teams { get; private set; }
 	public List<RaceWeekend> Calendar { get; private set; }
-
+	public PointsSystem? PointsSystem { get; private set; }
 	public Championship(string name)
 	{
 		Name = name;
 		Teams = new List<Team>();
 		Calendar = new List<RaceWeekend>();
+	
 	}
 
 	public void AddTeam(Team team)
@@ -23,4 +24,8 @@ public class Championship
 	{
 		Calendar.Add(raceWeekend);
 	}
+	public void SetPointsSystem(PointsSystem pointsSystem)
+{
+	PointsSystem = pointsSystem;
+}
 }

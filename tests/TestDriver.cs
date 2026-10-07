@@ -159,12 +159,14 @@ PointsSystem pointsSystem = new PointsSystem(
 		{ 9, 2 },
 		{ 10, 1 }
 	}
+
 );
+	championship.SetPointsSystem(pointsSystem);
 round1.Results.Add(
 	new RaceResult(
 		driver1,
 		1,
-		pointsSystem.GetPointsForPosition(1)
+		championship.PointsSystem!.GetPointsForPosition(1)
 	)
 );
 
@@ -172,7 +174,7 @@ round1.Results.Add(
 	new RaceResult(
 		driver2,
 		2,
-		pointsSystem.GetPointsForPosition(2)
+		championship.PointsSystem!.GetPointsForPosition(2)
 	)
 );
 
