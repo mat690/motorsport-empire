@@ -784,7 +784,17 @@ Les réglementations sportives peuvent également évoluer : format du week-end,
 
 Le format d'un week-end et le système de qualification ne doivent pas être codés en dur. Ils doivent être configurables afin que les championnats puissent adopter de nouveaux formats au cours d'une sauvegarde.
 
-Les changements réglementaires sont conservés dans l'histoire du championnat afin de pouvoir comprendre les différentes ères techniques et sportives d'une sauvegarde.
+Les changements réglementaires sont conservés dans l'histoire du championnat afin de pouvoir comprendre les différentes ères techniques et sportives d'une sauvegarde.### Électrification et systèmes énergétiques
+
+Les réglementations techniques peuvent faire évoluer la place de l'électrification dans les groupes propulseurs.
+
+Selon les époques et les catégories, les règlements peuvent définir ou modifier la puissance électrique, les systèmes de récupération d'énergie, la capacité et la masse des batteries, le déploiement énergétique, les contraintes thermiques, les composants électriques autorisés et la répartition entre les différentes sources de puissance.
+
+Les équipes et motoristes peuvent développer séparément différents domaines : batterie, moteur électrique, récupération d'énergie, électronique de puissance, refroidissement et gestion du déploiement.
+
+Les performances électriques ne se limitent pas à une valeur de puissance. L'efficacité de récupération, la capacité de stockage, les températures, la masse, la fiabilité et la stratégie de déploiement influencent les performances en piste.
+
+Les changements de réglementation énergétique peuvent créer de nouvelles ères techniques et redistribuer la hiérarchie entre constructeurs et motoristes.
 ## 36. Classements virtuels et événements de championnat en direct
 
 Pendant les séances et particulièrement les courses, le jeu recalcule dynamiquement les conséquences des résultats actuels sur les championnats.

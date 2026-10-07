@@ -25,7 +25,24 @@ public partial class TestDriver : Node
 		);
 
 		team.SetDrivers(driver1, driver2);
+Championship championship = new Championship("World Racing Championship");
 
+championship.AddTeam(team);
+Team rivalTeam = new Team(
+	"Velox Motorsport",
+	"Italie",
+	22000000
+);
+
+championship.AddTeam(rivalTeam);
+GD.Print("=== CHAMPIONNAT ===");
+GD.Print($"Championnat : {championship.Name}");
+GD.Print($"Nombre d'écuries : {championship.Teams.Count}");
+
+foreach (Team championshipTeam in championship.Teams)
+{
+	GD.Print($"- {championshipTeam.Name} ({championshipTeam.Nationality})");
+}
 		GD.Print("=== MOTORSPORT EMPIRE ===");
 		GD.Print("Écurie : ", team.Name);
 		GD.Print("Nationalité : ", team.Nationality);
