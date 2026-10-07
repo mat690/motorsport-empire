@@ -1,4 +1,5 @@
 using Godot;
+using System.Collections.Generic;
 public partial class TestDriver : Node
 {
 	public override void _Ready()
@@ -144,16 +145,38 @@ GD.Print(
 	"VX-01 : ",
 	rivalCar.CalculateCircuitPerformance(powerCircuit).ToString("0.00")
 );
-round1.Results.Add(new RaceResult(driver1, 1, 25));
-round1.Results.Add(new RaceResult(driver2, 2, 18));
+PointsSystem pointsSystem = new PointsSystem(
+	new Dictionary<int, int>
+	{
+		{ 1, 25 },
+		{ 2, 18 },
+		{ 3, 15 },
+		{ 4, 12 },
+		{ 5, 10 },
+		{ 6, 8 },
+		{ 7, 6 },
+		{ 8, 4 },
+		{ 9, 2 },
+		{ 10, 1 }
+	}
+);
+round1.Results.Add(
+	new RaceResult(
+		driver1,
+		1,
+		pointsSystem.GetPointsForPosition(1)
+	)
+);
 
-foreach (RaceResult result in round1.Results)
-{
-	GD.Print(
-		$"{result.Position}. " +
-		$"{result.Driver.GetFullName()}"
-	);
-	foreach (RaceResult raceResult in round1.Results)
+round1.Results.Add(
+	new RaceResult(
+		driver2,
+		2,
+		pointsSystem.GetPointsForPosition(2)
+	)
+);
+
+foreach (RaceResult raceResult in round1.Results)
 {
 	GD.Print(
 		$"{raceResult.Position}. " +
@@ -161,7 +184,6 @@ foreach (RaceResult result in round1.Results)
 		$"{raceResult.Points} points"
 	);
 }
-}
-}
 
 	}
+}
