@@ -6,7 +6,7 @@ public partial class Driver : RefCounted
 	public string LastName { get; set; }
 	public int Age { get; set; }
 	public string Nationality { get; set; }
-
+public Team? CurrentTeam { get; internal set; }
 	public float Pace { get; set; }
 	public float Qualifying { get; set; }
 	public float Consistency { get; set; }
