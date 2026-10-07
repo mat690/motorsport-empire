@@ -7,6 +7,7 @@ public class Team
 
 	public Driver? FirstDriver { get; private set; }
 	public Driver? SecondDriver { get; private set; }
+	public Car? Car { get; private set; }
 
 	public Team(
 		string name,
@@ -25,5 +26,9 @@ public class Team
 
 	firstDriver.CurrentTeam = this;
 	secondDriver.CurrentTeam = this;
+}
+public void SetCar(Car car)
+{
+	Car = car;
 }
 }
