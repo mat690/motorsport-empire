@@ -12,6 +12,7 @@ public partial class TestDriver : Node
 		);
 
 		DriverKnowledge knowledge = new DriverKnowledge(driver);
+		knowledge.ImproveKnowledge(20.0f);
 
 		GD.Print("=== MOTORSPORT EMPIRE C# ===");
 		GD.Print("Pilote : ", driver.GetFullName());
