@@ -752,3 +752,51 @@ La localisation peut influencer notamment :
 Les circuits fictifs doivent sembler appartenir à leur région
 sans être de simples copies de circuits réels.
 « Direction artistique de l'interface » indiquant : moderne, épurée, premium, sombre, très lisible, couleur de l'écurie comme accent, informations complexes présentées progressivement et animations sobres.
+
+## 34. Carrière du joueur et mode Vagabond
+
+Le joueur n'est pas obligatoirement lié à une seule écurie pendant toute sa carrière.
+
+Un mode Vagabond permet de commencer comme manager ou directeur sans posséder d'écurie. Le joueur construit sa réputation et peut recevoir des offres, négocier des contrats, changer d'écurie, changer de championnat, démissionner, être licencié ou rester temporairement sans poste.
+
+Les opportunités dépendent notamment des résultats, de la réputation, de l'expérience, des relations, des ambitions et de la situation des écuries.
+
+Lorsqu'un joueur quitte une écurie, celle-ci continue d'exister et est reprise par l'IA. Elle conserve son histoire, ses infrastructures, ses pilotes, son personnel et les conséquences des décisions prises précédemment. Une ancienne écurie du joueur peut donc devenir plus tard un concurrent ou un rival.
+
+Les changements d'écurie doivent passer par un véritable marché des dirigeants et des négociations de contrats, avec éventuellement plusieurs offres concurrentes, des discussions confidentielles et des fuites dans les médias.
+
+Le jeu pourra proposer différentes philosophies de carrière, notamment :
+- une carrière Vagabond centrée sur la progression professionnelle du manager ;
+- une carrière Fondateur/Empire centrée sur la création, la propriété et le développement d'une organisation de sport automobile.
+
+L'historique de carrière du joueur est conservé : écuries dirigées, saisons, victoires, titres, licenciements, démissions et autres événements majeurs.
+## 35. Évolution des réglementations
+
+Les championnats évoluent au cours des décennies grâce à des changements de réglementation technique et sportive.
+
+Les réglementations techniques peuvent notamment modifier les moteurs, l'aérodynamique, les dimensions et caractéristiques des voitures, les composants autorisés, les contraintes de développement, les coûts et d'autres paramètres techniques.
+
+Les changements peuvent aller d'un ajustement mineur à une révolution réglementaire obligeant les équipes à développer une nouvelle génération de voitures ou de groupes propulseurs. Ces changements peuvent redistribuer la hiérarchie sportive.
+
+Les équipes doivent anticiper les futures réglementations. Une réglementation annoncée à l'avance peut nécessiter de répartir les ressources entre la voiture actuelle et le projet de la saison suivante.
+
+Les réglementations sportives peuvent également évoluer : format du week-end, nombre et durée des séances d'essais, format des qualifications, courses sprint, attribution des points, règles de pneus, parc fermé et autres règles de compétition.
+
+Le format d'un week-end et le système de qualification ne doivent pas être codés en dur. Ils doivent être configurables afin que les championnats puissent adopter de nouveaux formats au cours d'une sauvegarde.
+
+Les changements réglementaires sont conservés dans l'histoire du championnat afin de pouvoir comprendre les différentes ères techniques et sportives d'une sauvegarde.
+## 36. Classements virtuels et événements de championnat en direct
+
+Pendant les séances et particulièrement les courses, le jeu recalcule dynamiquement les conséquences des résultats actuels sur les championnats.
+
+Le jeu distingue le classement officiel avant l'épreuve du classement virtuel correspondant aux résultats si l'épreuve se terminait à l'instant présent.
+
+Le classement virtuel est recalculé lors des événements susceptibles de modifier les points : changements de position, abandons, pénalités, arrêts, bonus prévus par le règlement et autres événements pertinents.
+
+Le système fonctionne pour les championnats pilotes et constructeurs et utilise le règlement réellement applicable à la saison concernée.
+
+Le jeu détecte les changements importants : nouveau leader virtuel, titre virtuellement gagné ou perdu, égalité nécessitant un départage, élimination mathématique d'un prétendant ou changement majeur au championnat.
+
+Ces événements peuvent déclencher des éléments de retransmission : classement affiché à l'écran, intervention du réalisateur TV, commentaires, réactions du garage et, lorsque le résultat devient officiel, célébrations et cérémonies adaptées.
+
+Les célébrations doivent être contextuelles et utiliser les véritables pilotes, équipes, voitures et livrées de la sauvegarde. Elles peuvent notamment concerner une pole position, une première victoire, une victoire à domicile, un podium, un titre pilotes ou constructeurs, un record, une victoire historique ou la dernière course d'une personnalité importante.
